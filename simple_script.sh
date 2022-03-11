@@ -66,7 +66,8 @@ fi
 # fi
 
 # case statement
-read -p "Are you 21 or not Y/N " ANSWER
+# read -p "Are you 21 or not Y/N " ANSWER
+ANSWER="y"
 case "${ANSWER}" in
 [yY] | [Yy][Ee][Ss])
     echo "you can have a bear :)"
@@ -78,3 +79,43 @@ case "${ANSWER}" in
     echo "Please type Yes Or No"
     ;;
 esac
+
+NAMES="Nuruddin Syeed Juba Dastan"
+for NAME in $NAMES; do
+    echo "Hello ${NAME}"
+done
+
+# # FOr loops to rename files
+# FILES=$(ls *.txt)
+# NEW="new"
+# for FILE in $FILES; do
+#     echo "Renaming ${FILE} to new-${FILE}"
+#     mv $FILE $NEW-$FILE
+# done
+
+# While loop read line by line
+# LINE=1
+# while read -r CURRENT_LINE; do
+#     echo "${LINE}: ${CURRENT_LINE}"
+#     ((LINE++))
+# done <"./new-new-1.txt"
+
+# FUNCTION
+function sayHello() {
+    echo "Hello Wrld from fucntion"
+}
+
+sayHello
+
+# Function with params
+function greet() {
+    echo "Hello I am $1 and I am $2"
+}
+
+greet syeed nuruddin
+
+# create a folder and create a folder inside and write to it
+mkdir hello_from_sh
+touch "hello_from_sh/text.txt"
+echo "Hello world from shell terminal" >>"hello_from_sh/text.txt"
+echo "created text.txt"
