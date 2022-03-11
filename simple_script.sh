@@ -6,7 +6,7 @@ echo Hello Wolrd
 NAME="Syeed"
 echo "My Name is ${NAME}"
 
-read -p "Enter Your Name: " NAME
+# read -p "Enter Your Name: " NAME
 echo "Hello ${NAME}, Nice To Meet You"
 
 if [ $NAME == "Syeed" ]; then
@@ -56,3 +56,25 @@ fi
 # -w    True if the file is writable
 # -x    True if the file is an executable
 ########
+
+# read -p "Enter Title : " TITLE
+
+# if [ -z "$TITLE" ]; then
+#     echo "Title found"
+# else
+#     echo "Title Not Found"
+# fi
+
+# case statement
+read -p "Are you 21 or not Y/N " ANSWER
+case "${ANSWER}" in
+[yY] | [Yy][Ee][Ss])
+    echo "you can have a bear :)"
+    ;;
+[nN] | [Nn][Oo])
+    echo "Sorry, you are not allowed to drink"
+    ;;
+*)
+    echo "Please type Yes Or No"
+    ;;
+esac
